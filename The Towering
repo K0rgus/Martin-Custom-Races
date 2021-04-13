@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+	<elements>
+	<info>
+		<name>The Towering</name>
+		<description></description>
+		<author url="https://pbs.twimg.com/media/EWi50CmWkAc4Ah9.jpg">Martin</author>
+		<update version="0.1.8">
+			<file name="race-towering.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/races/race-gnome.xml" />
+		</update>
+	</info>
+
+	<element name="The Towering" type="Race" source="Martin's Races" id="ID_RACE_TOWERING">
+		<description>
+
+			<h4>THE TOWERING TRAITS</h4>
+			<p>Your towering character has certain characteristics in common with all others of their tribe.</p>
+			<p>
+				<span class="feature">Ability Score Increase.</span>Your Dexterity score increases by 2.<br />
+				<span class="feature">Age.</span>The Towering mature at the same rate humans do, and can live about 40 years.<br />
+				<span class="feature">Alignment.</span>The Towering are a race that desire a natural balance above all else, and usually lean towards lawful behaviour.<br />
+				<span class="feature">Size.</span>The Towering average between 8 to 10 feet when standing up straight, but are incredibly skinny, their limbs and bodies commonly related sticks. Your size is medium.<br />
+				<span class="feature">Speed.</span>Your base walking speed is 40 feet.<br />
+				<span class="feature">Languages.</span>You can speak, read, and write Common and a language of your choice.<br />
+				<span class="feature">Subrace.</span>Two subraces of towering are found among the worlds of D&amp;D: forest guardians and prairie hunter. Choose one of these subraces.<br />
+			</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="height" modifier="2d10">7'11"</set>
+			<set name="weight" modifier="2d4">130 lb.</set>
+		</setters>
+		<rules>
+			<stat name="dexterity" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (The Towering)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="innate speed" value="40" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (The Towering)" supports="Standard||Exotic" requirements="!ID_WOTC_ERLW_DRAGONMARK_MARK_OF_FINDING"/>
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_FALLEN_SUBRACE" />
+		</rules>
+	</element>
+
+	<element name="Gnome Subrace" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_GNOME_SUBRACE">
+		<description>
+			<p>Two subraces of towering are found among the worlds of D&amp;D: forest guardians and prairie hunter. Choose one of these subraces.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Sub Race" name="The Towering Subrace" supports="The Towering" />
+		</rules>
+	</element>
+
+
+	<element name="Forest Guardians" type="Sub Race" source="Martin's Custom Races" id="ID_SUB_RACE_FOREST_GUARDIAN">
+		<supports>The Towering</supports>
+		<description>
+			<p>As a forest gnome, you have a natural knack for illusion and inherent quickness and stealth. In the worlds of D&amp;D, forest gnomes are rare and secretive. They gather in hidden communities in sylvan forests, using illusions and trickery to conceal themselves from threats or to mask their escape should they be detected. Forest gnomes tend to be friendly with other good-spirited woodland folk, and they regard elves and good fey as their most important allies. These gnomes also befriend small forest animals and rely on them for information about threats that might prowl their lands.</p>
+			<p>
+				<span class="feature">Ability Score Increase.</span>Your Wisdom score increases by 1.<br />
+				<span class="feature">The Forest and the Trees.</span>You have proficiency in the Nature skill.<br />
+				<span class="feature">Flexibility.</span>Despite your height, you have learned to blend into your surroundings. You have advantage on stealth checks.<br />
+			</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Forest Gnome)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_NATURAL_ILLUSIONIST" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_SPEAK_WITH_SMALL_BEASTS" />
+		</rules>
+	</element>
+
+	<element name="Natural Illusionist" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_NATURAL_ILLUSIONIST">
+		<description>
+			<p>You know the minor illusion cantrip. Intelligence is your spellcasting ability for it.</p>
+		</description>
+		<sheet>
+			<description>You know the minor illusion cantrip. Intelligence is your spellcasting ability for it.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MINOR_ILLUSION" />
+		</rules>
+	</element>
+	<element name="Speak with Small Beasts" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_SPEAK_WITH_SMALL_BEASTS">
+		<description>
+			<p>Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Forest gnomes love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets.</p>
+		</description>
+		<sheet>
+			<description>Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts.</description>
+		</sheet>
+	</element>
+
+	<element name="Rock Gnome" type="Sub Race" source="Player’s Handbook" id="ID_SUB_RACE_ROCK_GNOME">
+		<supports>Gnome</supports>
+		<description>
+			<p>As a rock gnome, you have a natural inventiveness and hardiness beyond that of other gnomes. Most gnomes in the worlds of D&amp;D are rock gnomes, including the tinker gnomes of the Dragonlance setting.</p>
+			<p>
+				<span class="feature">Ability Score Increase.</span>Your Constitution score increases by 1.<br />
+				<span class="feature">Artificer’s Lore.</span>Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.<br />
+				<span class="feature">Tinker.</span>You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.<br />
+			</p>
+			<p>When you create a device, choose one of the following options:</p>
+			<p style="margin-left:20px;">
+				<span style="font-style:italic;padding-right:5px;padding-left:-20px;">Clockwork Toy.</span>This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.<br />
+				<span style="font-style:italic;padding-right:5px;padding-left:-20px;">Fire Starter.</span>The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action.<br />
+				<span style="font-style:italic;padding-right:5px;padding-left:-20px;">Music Box.</span>When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song’s end or when it is closed.<br />
+			</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Rock Gnome)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_ARTIFICERS_LORE" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_TINKER" />
+		</rules>
+	</element>
+
+	<element name="Artificer’s Lore" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_ARTIFICERS_LORE">
+		<description>
+			<p>Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.</p>
+		</description>
+		<sheet>
+			<description>Whenever you make a History check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.</description>
+		</sheet>
+	</element>
+	<element name="Tinker" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_TINKER">
+		<description>
+			<p>You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.</p>
+		</description>
+		<sheet>
+			<description>Using tinker’s tools, you can construct a Tiny clockwork device. You can have up to three such devices active at a time.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Simple Weapon or Tool (Tinker)" supports="Simple||Tool" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+</elements>
