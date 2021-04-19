@@ -37,11 +37,11 @@
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Language (The Towering)" supports="Standard||Exotic" requirements="!ID_WOTC_ERLW_DRAGONMARK_MARK_OF_FINDING"/>
-			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_FALLEN_SUBRACE" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_TOWERING_SUBRACE" />
 		</rules>
 	</element>
 
-	<element name="Gnome Subrace" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_GNOME_SUBRACE">
+	<element name="The Towering Subrace" type="Racial Trait" source="Martin's Races" id="ID_RACIAL_TRAIT_TOWERING_SUBRACE">
 		<description>
 			<p>Two subraces of towering are found among the worlds of D&amp;D: forest guardians and prairie hunter. Choose one of these subraces.</p>
 		</description>
@@ -51,89 +51,70 @@
 		</rules>
 	</element>
 
-
 	<element name="Forest Guardians" type="Sub Race" source="Martin's Custom Races" id="ID_SUB_RACE_FOREST_GUARDIAN">
 		<supports>The Towering</supports>
 		<description>
-			<p>As a forest gnome, you have a natural knack for illusion and inherent quickness and stealth. In the worlds of D&amp;D, forest gnomes are rare and secretive. They gather in hidden communities in sylvan forests, using illusions and trickery to conceal themselves from threats or to mask their escape should they be detected. Forest gnomes tend to be friendly with other good-spirited woodland folk, and they regard elves and good fey as their most important allies. These gnomes also befriend small forest animals and rely on them for information about threats that might prowl their lands.</p>
+			<p>As a forest guardian, you have a natural knack for stealth and a knowledge of the world around you. In the worlds of D&amp;D, forest guardians are rare and secretive. They gather in hidden communities in sylvan forests, using steath to conceal themselves from threats or to mask their escape should they be detected. Forest guardians tend to be friendly with other good-spirited woodland folk, and they regard elves and good fey as their most important allies.</p>
 			<p>
 				<span class="feature">Ability Score Increase.</span>Your Wisdom score increases by 1.<br />
 				<span class="feature">The Forest and the Trees.</span>You have proficiency in the Nature skill.<br />
-				<span class="feature">Flexibility.</span>Despite your height, you have learned to blend into your surroundings. You have advantage on stealth checks.<br />
+				<span class="feature">Flexibility.</span>Due to your highly flexible body, you can hide in tight spaces when you need you. You have advantage on all stealth checks.<br />
 			</p>
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="dexterity" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Forest Gnome)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_NATURAL_ILLUSIONIST" />
-			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_SPEAK_WITH_SMALL_BEASTS" />
+			<stat name="wisdom" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Forest Guardian)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_THE_FOREST_AND_THE_TREES" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_FLEXIBILITY" />
 		</rules>
 	</element>
 
-	<element name="Natural Illusionist" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_NATURAL_ILLUSIONIST">
+	<element name="The Forest and the Trees" type="Racial Trait" source="Martin's Races" id="ID_RACIAL_TRAIT_THE_FOREST_AND_THE_TREES">
 		<description>
-			<p>You know the minor illusion cantrip. Intelligence is your spellcasting ability for it.</p>
+			<p>You have proficiency in the Nature skill.</p>
 		</description>
 		<sheet>
-			<description>You know the minor illusion cantrip. Intelligence is your spellcasting ability for it.</description>
+			<description>You have proficiency in the nature skill.</description>
 		</sheet>
 		<rules>
-			<grant type="Spell" id="ID_PHB_SPELL_MINOR_ILLUSION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>
-	<element name="Speak with Small Beasts" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_SPEAK_WITH_SMALL_BEASTS">
+	<element name="Flexibility" type="Racial Trait" source="Martin's Races" id="ID_RACIAL_TRAIT_FLEXIBILITY">
 		<description>
-			<p>Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Forest gnomes love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets.</p>
+			<p>Due to your highly flexible body, you can hide in tight spaces when you need you. You have advantage on all stealth checks.</p>
 		</description>
 		<sheet>
-			<description>Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts.</description>
+			<description>You have advantage on all stealth checks.</description>
 		</sheet>
 	</element>
 
-	<element name="Rock Gnome" type="Sub Race" source="Player’s Handbook" id="ID_SUB_RACE_ROCK_GNOME">
-		<supports>Gnome</supports>
+	<element name="Prarie Hunter" type="Sub Race" source="Martin's Races" id="ID_SUB_RACE_PRARIE_HUNTER">
+		<supports>The Towering</supports>
 		<description>
-			<p>As a rock gnome, you have a natural inventiveness and hardiness beyond that of other gnomes. Most gnomes in the worlds of D&amp;D are rock gnomes, including the tinker gnomes of the Dragonlance setting.</p>
+			<p>Due to generations of hunting and learning how to carry yourself at such a height, prarie hunters are very confident and charismatic.</p>
 			<p>
-				<span class="feature">Ability Score Increase.</span>Your Constitution score increases by 1.<br />
-				<span class="feature">Artificer’s Lore.</span>Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.<br />
-				<span class="feature">Tinker.</span>You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.<br />
-			</p>
-			<p>When you create a device, choose one of the following options:</p>
-			<p style="margin-left:20px;">
-				<span style="font-style:italic;padding-right:5px;padding-left:-20px;">Clockwork Toy.</span>This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.<br />
-				<span style="font-style:italic;padding-right:5px;padding-left:-20px;">Fire Starter.</span>The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action.<br />
-				<span style="font-style:italic;padding-right:5px;padding-left:-20px;">Music Box.</span>When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song’s end or when it is closed.<br />
+				<span class="feature">Ability Score Increase.</span>Your Charisma score increases by 2.<br />
+				<span class="feature">Hunter's Instinct.</span>You gain proficiency in Survival.<br />
 			</p>
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="constitution" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Rock Gnome)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_ARTIFICERS_LORE" />
-			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_TINKER" />
+			<stat name="charisma" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Prarie Hunter)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 		</rules>
 	</element>
 
-	<element name="Artificer’s Lore" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_ARTIFICERS_LORE">
+	<element name="Hunter's Instinct" type="Racial Trait" source="Martin's Races" id="ID_RACIAL_TRAIT_HUNTERS_INSTINCT">
 		<description>
-			<p>Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.</p>
+			<p>Due to your hunting expertise, you gain proficiency in Survival.</p>
 		</description>
 		<sheet>
-			<description>Whenever you make a History check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.</description>
-		</sheet>
-	</element>
-	<element name="Tinker" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_TINKER">
-		<description>
-			<p>You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.</p>
-		</description>
-		<sheet>
-			<description>Using tinker’s tools, you can construct a Tiny clockwork device. You can have up to three such devices active at a time.</description>
+			<description>Due to your hunting expertise, you gain proficiency in Survival.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
-			<select type="Proficiency" name="Simple Weapon or Tool (Tinker)" supports="Simple||Tool" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>
 
