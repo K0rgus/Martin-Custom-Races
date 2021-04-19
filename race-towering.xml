@@ -105,7 +105,6 @@
 			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Prarie Hunter)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 		</rules>
 	</element>
-
 	<element name="Hunter's Instinct" type="Racial Trait" source="Martin's Races" id="ID_RACIAL_TRAIT_HUNTERS_INSTINCT">
 		<description>
 			<p>Due to your hunting expertise, you gain proficiency in Survival.</p>
